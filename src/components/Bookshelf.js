@@ -1,11 +1,15 @@
 import React from "react";
-import { Box, Text, Button, Grid } from "@chakra-ui/react";
+import { Box, Text, Button, Grid, Flex } from "@chakra-ui/react";
 
 const Bookshelf = ({ books, onDelete }) => {
   return (
     <Box>
       {books.length === 0 ? (
-        <Text>No books in your bookshelf</Text>
+        <Flex align="center" justify="center" height="100vh">
+          <Text fontWeight="bold" fontSize={18} color="#F44900">
+            No books in your bookshelf
+          </Text>
+        </Flex>
       ) : (
         <Grid
           templateColumns={{
