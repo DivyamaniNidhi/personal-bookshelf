@@ -16,24 +16,7 @@ const Search = () => {
     if (storedBookshelf) {
       setBookshelf(JSON.parse(storedBookshelf));
     }
-
-    const storedQuery = localStorage.getItem("searchQuery");
-    const storedBooks = localStorage.getItem("searchBooks");
-
-    if (storedQuery) {
-      setQuery(storedQuery);
-    }
-
-    if (storedBooks) {
-      setBooks(JSON.parse(storedBooks));
-    }
   }, []);
-
-  useEffect(() => {
-    // Save search state to localStorage
-    localStorage.setItem("searchQuery", query);
-    localStorage.setItem("searchBooks", JSON.stringify(books));
-  }, [query, books]);
 
   const updateBookshelf = (newBookshelf) => {
     setBookshelf(newBookshelf);
